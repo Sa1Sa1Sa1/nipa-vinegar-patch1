@@ -17,6 +17,7 @@
       background: #eef7ef;
       color: #1b3c1b;
       scroll-behavior: smooth;
+      position: relative;
     }
 
     header {
@@ -62,14 +63,20 @@
     }
 
     .section {
-      display: none;
+      position: absolute;
+      top: 120px;
+      left: 0;
+      width: 100%;
       opacity: 0;
+      pointer-events: none;
       transition: opacity 1.2s ease;
+      padding: 25px;
     }
 
     .active-section {
-      display: block;
       opacity: 1;
+      pointer-events: all;
+      position: relative;
     }
 
     .card {
@@ -132,7 +139,6 @@
       color: #ffb300;
     }
 
-    /* Bullet grid */
     .bullet-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -154,6 +160,15 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 8px;
       margin-top: 10px;
+    }
+
+    /* Big thank you text for contact page */
+    .big-thank {
+      font-size: 36px;
+      font-weight: bold;
+      color: #2e7d32;
+      text-align: center;
+      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -274,14 +289,14 @@
 
   <!-- CONTACT -->
   <section id="contact" class="section">
-    <div class="title">Contact Us</div>
+    <div class="big-thank">THANK YOU!</div>
     <div class="card">
-      <p>🌿 Thank you for supporting our product! We hope our eco-friendly Nipa Vinegar Mosquito Patch keeps you and your family safe from mosquitoes.</p>
+      <p>🌿 We deeply appreciate your support! We hope our eco-friendly Nipa Vinegar Mosquito Patch keeps you and your family safe from mosquitoes.</p>
       <p>We value your feedback and love hearing from our customers.</p>
       <p><b>Facebook:</b> genezoe felipe martin</p>
       <p><b>Contact:</b> 09466922248</p>
       <p><b>Email:</b> nipa.vinegar.project@gmail.com</p>
-      <p>We appreciate your trust in our eco-friendly, natural mosquito patch!</p>
+      <p>Thank you for trusting our natural, Filipino-made innovation!</p>
     </div>
   </section>
 
