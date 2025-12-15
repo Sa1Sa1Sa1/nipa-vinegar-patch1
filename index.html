@@ -57,10 +57,13 @@
     .section {
       display: none;
       padding: 25px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
     }
 
     .active-section {
       display: block;
+      opacity: 1;
     }
 
     .card {
@@ -70,6 +73,12 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       margin-top: 15px;
       line-height: 1.6;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     }
 
     .title {
@@ -290,8 +299,15 @@
     const db = firebase.firestore(app);
 
     function showSection(id, event) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active-section'));
-      document.getElementById(id).classList.add('active-section');
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(s => {
+        if (s.id === id) {
+          s.classList.add('active-section');
+        } else {
+          s.classList.remove('active-section');
+        }
+      });
+
       document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
       event.target.classList.add('active');
     }
