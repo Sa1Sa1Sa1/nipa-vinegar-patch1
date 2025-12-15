@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nipa Vinegar Mosquito Patch</title>
+
+  <!-- 🔹 Firebase CDN (COMPAT – REQUIRED) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #eef7ef;
+      color: #1b3c1b;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(to right, #2e7d32, #66bb6a);
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 12px;
+      background: #1b5e20;
+    }
+
+    nav a {
+      color: white;
+      background: #2e7d32;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a.active,
+    nav a:hover {
+      background: #a5d6a7;
+      color: #1b3c1b;
+    }
+
+    .section {
+      display: none;
+      padding: 25px;
+    }
+
+    .active-section {
+      display: block;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1b5e20;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #1b5e20;
+      color: white;
+      cursor: pointer;
+    }
+
+    input,
+    textarea {
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      padding: 5px;
+      width: 100%;
+    }
+
+    #stars span {
+      font-size: 28px;
+      cursor: pointer;
+      color: #ccc;
+    }
+
+    #stars span.active {
+      color: #ffb300;
+    }
+
+    .section img {
+      width: 100%;
+      max-width: 520px;
+      display: block;
+      margin: 15px auto;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>🌿 Nipa Vinegar Mosquito Patch</header>
+
+<nav>
+  <a onclick="showSection('home',event)" class="active">Home</a>
+  <a onclick="showSection('nipa',event)">About Nipa Tree</a>
+  <a onclick="showSection('vinegar',event)">Vinegar & Mosquito</a>
+  <a onclick="showSection('locations',event)">Locations</a>
+  <a onclick="showSection('reviews',event)">Reviews</a>
+  <a onclick="showSection('feedback',event)">Feedback</a>
+  <a onclick="showSection('contact',event)">Contact</a>
+</nav>
+
+<section id="home" class="section active-section">
+  <div class="title">Welcome!</div>
+  <div class="card">
+    Welcome to the official website of the <b>Nipa Vinegar Mosquito Patch</b> — a natural,
+    eco-friendly, Filipino-made innovation designed to protect families from mosquitoes.
+    <br><br>
+    <b>Capstone Project – Grade 12 STEM</b><br>
+    Our Lady of La Salette, St. Mary's Academy of Hagonoy
+  </div>
+</section>
+
+<section id="nipa" class="section">
+  <div class="title">About the Nipa Tree</div>
+  <div class="card">
+    The Nipa palm (<i>Nypa fruticans</i>) grows in mangrove wetlands and brackish waters.
+  </div>
+</section>
+
+<section id="vinegar" class="section">
+  <div class="title">How Nipa Vinegar Repels Mosquitoes</div>
+  <div class="card">
+    Nipa vinegar contains acetic acid that disrupts mosquito scent receptors.
+  </div>
+</section>
+
+<section id="locations" class="section">
+  <div class="title">Locations</div>
+  <div class="card">
+    Hagonoy, Paombong, Pampanga Delta, Bataan, Cagayan, Leyte, Samar, Davao, Zamboanga
+  </div>
+</section>
+
+<section id="reviews" class="section">
+  <div class="title">User Reviews</div>
+</section>
+
+<section id="feedback" class="section">
+  <div class="title">Send Feedback</div>
+  <div class="card">
+    <input id="fbName" placeholder="Your Name"><br><br>
+    <textarea id="fbText" rows="4" placeholder="Your Feedback"></textarea><br><br>
+
+    <div id="stars">
+      <span onclick="setRating(1)">★</span>
+      <span onclick="setRating(2)">★</span>
+      <span onclick="setRating(3)">★</span>
+      <span onclick="setRating(4)">★</span>
+      <span onclick="setRating(5)">★</span>
+    </div>
+    <input type="hidden" id="rating" value="0"><br><br>
+
+    <button onclick="submitFeedback()">Submit Feedback</button>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="title">Contact</div>
+  <div class="card">
+    Facebook: genezoe felipe martin<br>
+    Contact: 09466922248<br>
+    Email: nipa.vinegar.project@gmail.com
+  </div>
+</section>
+
+<script>
+  // 🔹 Firebase Configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAYXtsa6-39JuvzgAueoeoNyAi2UBSvyt0",
+    authDomain: "nipavinegarpatch.firebaseapp.com",
+    projectId: "nipavinegarpatch",
+    storageBucket: "nipavinegarpatch.firebasestorage.app",
+    messagingSenderId: "831718429416",
+    appId: "1:831718429416:web:a62b799a85722c2bf2af5d"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  function showSection(id, event) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active-section'));
+    document.getElementById(id).classList.add('active-section');
+    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  function setRating(value) {
+    document.getElementById("rating").value = value;
+    document.querySelectorAll("#stars span").forEach((s, i) => {
+      s.classList.toggle("active", i < value);
+    });
+  }
+
+  function submitFeedback() {
+    const name = fbName.value || "Anonymous";
+    const text = fbText.value;
+    const rating = Number(document.getElementById("rating").value);
+
+    if (!text || rating === 0) {
+      alert("Please add feedback and rating.");
+      return;
+    }
+
+    db.collection("reviews").add({
+      name,
+      text,
+      rating,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    });
+
+    fbName.value = "";
+    fbText.value = "";
+    document.getElementById("rating").value = 0;
+    document.querySelectorAll("#stars span").forEach(s => s.classList.remove("active"));
+  }
+
+  function addReview(review) {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `<b>${review.name}</b><br>${"★".repeat(review.rating)}<br>${review.text}`;
+    document.getElementById("reviews").appendChild(div);
+  }
+
+  db.collection("reviews").orderBy("timestamp", "desc")
+    .onSnapshot(snapshot => {
+      document.getElementById("reviews").innerHTML =
+        "<div class='title'>User Reviews</div>";
+      snapshot.forEach(doc => addReview(doc.data()));
+    });
+</script>
+
+</body>
+</html>
