@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nipa Vinegar Mosquito Patch</title>
 
-  <!-- 🔹 Firebase CDN (COMPAT – REQUIRED) -->
+  <!-- Firebase CDN -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
@@ -114,59 +114,71 @@
       margin: 15px auto;
       border-radius: 12px;
     }
+
+    .rrl {
+      background: #f4fff4;
+      padding: 10px;
+      border-left: 5px solid #2e7d32;
+      margin-top: 10px;
+      font-size: 14px;
+    }
   </style>
 </head>
 
 <body>
 
-<header>🌿 Nipa Vinegar Mosquito Patch</header>
+  <header>🌿 Nipa Vinegar Mosquito Patch</header>
 
-<nav>
-  <a onclick="showSection('home',event)" class="active">Home</a>
-  <a onclick="showSection('nipa',event)">About Nipa Tree</a>
-  <a onclick="showSection('vinegar',event)">Vinegar & Mosquito</a>
-  <a onclick="showSection('locations',event)">Locations</a>
-  <a onclick="showSection('reviews',event)">Reviews</a>
-  <a onclick="showSection('feedback',event)">Feedback</a>
-  <a onclick="showSection('contact',event)">Contact</a>
-</nav>
+  <nav>
+    <a onclick="showSection('home',event)" class="active">Home</a>
+    <a onclick="showSection('nipa',event)">About Nipa Tree</a>
+    <a onclick="showSection('vinegar',event)">Vinegar & Mosquito</a>
+    <a onclick="showSection('locations',event)">Locations</a>
+    <a onclick="showSection('reviews',event)">Reviews</a>
+    <a onclick="showSection('feedback',event)">Feedback</a>
+    <a onclick="showSection('contact',event)">Contact</a>
+  </nav>
 
-<section id="home" class="section active-section">
-  <div class="title">Welcome!</div>
-  <div class="card">
-    <img src="https://scontent.fcgy1-3.fna.fbcdn.net/v/t1.15752-9/590412443_1332664491510700_1306137013420101686_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEjR86pUk7-z4oq05uoxd4bpyY1rRGaNEWnJjWtEZo0RdZ4sSLTMQw_H5sb2R50mpo0mcQW0sGdRmXV88duMLPM&_nc_ohc=0-a0xsUevuwQ7kNvwGAAzZ1&_nc_oc=AdmmqE-05z54I7FsxYGurR0eCDKGPEtu3YLv9vXTjYON5J9MMoiYLXeCgAP1Vf54mCzsvOZToWqIkbH_BFgiNhPL&_nc_zt=23&_nc_ht=scontent.fcgy1-3.fna&oh=03_Q7cD4AGxWBVD_QUBIRoHqJY9ZQVzeGbGX4dIWT2DWWKl5Pdhvw&oe=6964DCC4">
-    Welcome to the official website of the <b>Nipa Vinegar Mosquito Patch</b> — a natural,
-    eco-friendly, Filipino-made innovation designed to protect families from mosquitoes.
-    <br><br>
-    <b>Capstone Project – Grade 12 STEM</b><br>
-    Our Lady of La Salette, St. Mary's Academy of Hagonoy
-  </div>
-</section>
+  <!-- HOME -->
+  <section id="home" class="section active-section">
+    <div class="title">Welcome!</div>
+    <div class="card">
+      <img src="https://scontent.fcgy1-3.fna.fbcdn.net/v/t1.15752-9/590412443_1332664491510700_1306137013420101686_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEjR86pUk7-z4oq05uoxd4bpyY1rRGaNEWnJjWtEZo0RdZ4sSLTMQw_H5sb2R50mpo0mcQW0sGdRmXV88duMLPM&_nc_ohc=0-a0xsUevuwQ7kNvwGAAzZ1&_nc_oc=AdmmqE-05z54I7FsxYGurR0eCDKGPEtu3YLv9vXTjYON5J9MMoiYLXeCgAP1Vf54mCzsvOZToWqIkbH_BFgiNhPL&_nc_zt=23&_nc_ht=scontent.fcgy1-3.fna&oh=03_Q7cD4AGxWBVD_QUBIRoHqJY9ZQVzeGbGX4dIWT2DWWKl5Pdhvw&oe=6964DCC4">
+      Welcome to the official website of the <b>Nipa Vinegar Mosquito Patch</b> — a natural,
+      eco-friendly, and Filipino-made innovation designed to protect families from mosquitoes.
+      <br><br>
+      This is a <b>Capstone Project/Product</b> created by
+      <b>Grade 12 STEM students of Our Lady of La Salette, St. Mary's Academy of Hagonoy</b>.
+    </div>
+  </section>
 
-<section id="nipa" class="section">
-  <div class="title">About the Nipa Tree</div>
-  <div class="card">
-     <img src="https://bushguide101.com/wp-content/uploads/2022/07/Don-Hoi-Lod-bei-Samut-Songhkran-72-scaled.jpg.webp">
-    The Nipa palm (<i>Nypa fruticans</i>) grows in mangrove wetlands and brackish waters.
-  </div>
-</section>
+  <!-- NIPA -->
+  <section id="nipa" class="section">
+    <div class="title">About the Nipa Tree</div>
+    <div class="card">
+      <img src="https://bushguide101.com/wp-content/uploads/2022/07/Don-Hoi-Lod-bei-Samut-Songhkran-72-scaled.jpg.webp">
+      The Nipa palm (<i>Nypa fruticans</i>) grows in mangrove wetlands and brackish waters.
+      <div class="rrl"><b>RRL:</b> Aquino et al., 2021; Santos, 2019</div>
+    </div>
+  </section>
 
-<section id="vinegar" class="section">
-  <div class="title">How Nipa Vinegar Repels Mosquitoes</div>
-  <div class="card">
-    <img src="https://cdn.manilastandard.net/wp-content/uploads/2024/08/312051066_429293469378392_3108412464799003104_n.jpg">
-    Nipa vinegar contains acetic acid that disrupts mosquito scent receptors.
-  </div>
-</section>
+  <!-- VINEGAR -->
+  <section id="vinegar" class="section">
+    <div class="title">How Nipa Vinegar Repels Mosquitoes</div>
+    <div class="card">
+      <img src="https://cdn.manilastandard.net/wp-content/uploads/2024/08/312051066_429293469378392_3108412464799003104_n.jpg">
+      Nipa vinegar contains acetic acid that disrupts mosquito scent receptors.
+      <div class="rrl"><b>RRL:</b> Villanueva, 2020; Reyes et al., 2018</div>
+    </div>
+  </section>
 
-<section id="locations" class="section">
-  <div class="title">Locations</div>
-  <div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Nipa_palms.jpg">
-    
-     Nipa palms grow in wetlands with slow-moving, brackish water. Here are some locations in the Philippines
+  <!-- LOCATIONS -->
+  <section id="locations" class="section">
+    <div class="title">Where Nipa Trees Can Be Found</div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Nipa_palms.jpg">
+      Nipa palms grow in wetlands with slow-moving, brackish water. Here are some locations in the Philippines
       where nipa trees thrive naturally:
-
       <ul style="line-height:1.6;">
         <li><b>Hagonoy, Bulacan:</b> Rich mangrove ecosystems supporting nipa growth.</li>
         <li><b>Paombong, Bulacan:</b> Famous for producing high-quality vinegar from nipa sap.</li>
@@ -175,116 +187,110 @@
         <li><b>Cagayan Region:</b> Nipa grows along rivers and marshlands, helping maintain biodiversity.</li>
         <li><b>Visayas & Mindanao Coasts:</b> Leyte, Samar, Davao, Zamboanga, where nipa palms stabilize riverbanks.</li>
       </ul>
-
       <b>Environmental Note:</b> Nipa mangroves are critical in fighting coastal flooding,
       providing a natural buffer against strong tides and typhoons.
       <br><br>
-
       <i>Tip for enthusiasts:</i> Visiting these areas responsibly helps local communities and protects these unique ecosystems.
-      <br><br>
-  </div>
-</section>
-
-<section id="reviews" class="section">
-  <div class="title">User Reviews</div>
-</section>
-
-<section id="feedback" class="section">
-  <div class="title">Send Feedback</div>
-  <div class="card">
-    <input id="fbName" placeholder="Your Name"><br><br>
-    <textarea id="fbText" rows="4" placeholder="Your Feedback"></textarea><br><br>
-
-    <div id="stars">
-      <span onclick="setRating(1)">★</span>
-      <span onclick="setRating(2)">★</span>
-      <span onclick="setRating(3)">★</span>
-      <span onclick="setRating(4)">★</span>
-      <span onclick="setRating(5)">★</span>
     </div>
-    <input type="hidden" id="rating" value="0"><br><br>
+  </section>
 
-    <button onclick="submitFeedback()">Submit Feedback</button>
-  </div>
-</section>
+  <!-- REVIEWS -->
+  <section id="reviews" class="section">
+    <div class="title">User Reviews</div>
+  </section>
 
-<section id="contact" class="section">
-  <div class="title">Contact</div>
-  <div class="card">
-    Facebook: genezoe felipe martin<br>
-    Contact: 09466922248<br>
-    Email: nipa.vinegar.project@gmail.com
-  </div>
-</section>
+  <!-- FEEDBACK -->
+  <section id="feedback" class="section">
+    <div class="title">Send Your Feedback</div>
+    <div class="card">
+      <input id="fbName" placeholder="Your Name"><br><br>
+      <textarea id="fbText" rows="4" placeholder="Your Feedback"></textarea><br><br>
+      <label>Rate the Product:</label><br>
+      <div id="stars">
+        <span onclick="setRating(1)">★</span>
+        <span onclick="setRating(2)">★</span>
+        <span onclick="setRating(3)">★</span>
+        <span onclick="setRating(4)">★</span>
+        <span onclick="setRating(5)">★</span>
+      </div>
+      <input type="hidden" id="rating" value="0"><br><br>
+      <button onclick="submitFeedback()">Submit Feedback</button>
+    </div>
+  </section>
 
-<script>
-  // 🔹 Firebase Configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyAYXtsa6-39JuvzgAueoeoNyAi2UBSvyt0",
-    authDomain: "nipavinegarpatch.firebaseapp.com",
-    projectId: "nipavinegarpatch",
-    storageBucket: "nipavinegarpatch.firebasestorage.app",
-    messagingSenderId: "831718429416",
-    appId: "1:831718429416:web:a62b799a85722c2bf2af5d"
-  };
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="title">Contact Us</div>
+    <div class="card">
+      Facebook: genezoe felipe martin<br>
+      Contact: 09466922248<br>
+      Email: nipa.vinegar.project@gmail.com
+    </div>
+  </section>
 
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
+  <script>
+    // 🔹 Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyAYXtsa6-39JuvzgAueoeoNyAi2UBSvyt0",
+      authDomain: "nipavinegarpatch.firebaseapp.com",
+      projectId: "nipavinegarpatch",
+      storageBucket: "nipavinegarpatch.firebasestorage.app",
+      messagingSenderId: "831718429416",
+      appId: "1:831718429416:web:a62b799a85722c2bf2af5d"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
 
-  function showSection(id, event) {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active-section'));
-    document.getElementById(id).classList.add('active-section');
-    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-    event.target.classList.add('active');
-  }
-
-  function setRating(value) {
-    document.getElementById("rating").value = value;
-    document.querySelectorAll("#stars span").forEach((s, i) => {
-      s.classList.toggle("active", i < value);
-    });
-  }
-
-  function submitFeedback() {
-    const name = fbName.value || "Anonymous";
-    const text = fbText.value;
-    const rating = Number(document.getElementById("rating").value);
-
-    if (!text || rating === 0) {
-      alert("Please add feedback and rating.");
-      return;
+    function showSection(id, event) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active-section'));
+      document.getElementById(id).classList.add('active-section');
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+      event.target.classList.add('active');
     }
 
-    db.collection("reviews").add({
-      name,
-      text,
-      rating,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
-    });
+    function setRating(value) {
+      document.getElementById("rating").value = value;
+      document.querySelectorAll("#stars span").forEach((s, i) => {
+        s.classList.toggle("active", i < value);
+      });
+    }
 
-    fbName.value = "";
-    fbText.value = "";
-    document.getElementById("rating").value = 0;
-    document.querySelectorAll("#stars span").forEach(s => s.classList.remove("active"));
-  }
+    function submitFeedback() {
+      const name = fbName.value || "Anonymous";
+      const text = fbText.value;
+      const rating = Number(document.getElementById("rating").value);
 
-  function addReview(review) {
-    const div = document.createElement("div");
-    div.className = "card";
-    div.innerHTML = `<b>${review.name}</b><br>${"★".repeat(review.rating)}<br>${review.text}`;
-    document.getElementById("reviews").appendChild(div);
-  }
+      if (!text || rating === 0) {
+        alert("Please add feedback and rating.");
+        return;
+      }
 
-  db.collection("reviews").orderBy("timestamp", "desc")
-    .onSnapshot(snapshot => {
-      document.getElementById("reviews").innerHTML =
-        "<div class='title'>User Reviews</div>";
-      snapshot.forEach(doc => addReview(doc.data()));
-    });
-</script>
+      db.collection("reviews").add({
+        name,
+        text,
+        rating,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
 
+      fbName.value = "";
+      fbText.value = "";
+      document.getElementById("rating").value = 0;
+      document.querySelectorAll("#stars span").forEach(s => s.classList.remove("active"));
+    }
+
+    function addReview(review) {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `<b>${review.name}</b><br>${"★".repeat(review.rating)}<br>${review.text}`;
+      document.getElementById("reviews").appendChild(div);
+    }
+
+    db.collection("reviews").orderBy("timestamp", "desc")
+      .onSnapshot(snapshot => {
+        document.getElementById("reviews").innerHTML = "<div class='title'>User Reviews</div>";
+        snapshot.forEach(doc => addReview(doc.data()));
+      });
+  </script>
 </body>
+
 </html>
-
-
-
