@@ -11,15 +11,12 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
       background: #eef7ef;
       color: #1b3c1b;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -30,6 +27,9 @@
       color: white;
       font-weight: bold;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav {
@@ -40,8 +40,8 @@
       padding: 12px;
       background: #1b5e20;
       position: sticky;
-      top: 0;
-      z-index: 100;
+      top: 70px;
+      z-index: 9;
     }
 
     nav a {
@@ -52,7 +52,7 @@
       text-decoration: none;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s, color 0.3s;
+      transition: all 0.3s ease;
     }
 
     nav a.active,
@@ -61,16 +61,24 @@
       color: #1b3c1b;
     }
 
+    /* Sections */
     .section {
       opacity: 0;
+      visibility: hidden;
       transform: translateY(20px);
       transition: opacity 0.6s ease, transform 0.6s ease;
       padding: 25px;
+      position: absolute;
+      width: 100%;
+      top: 130px;
+      left: 0;
     }
 
     .active-section {
       opacity: 1;
+      visibility: visible;
       transform: translateY(0);
+      position: relative;
     }
 
     .card {
@@ -80,12 +88,6 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       margin-top: 15px;
       line-height: 1.6;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     }
 
     .title {
@@ -110,6 +112,7 @@
       border: 1px solid #ccc;
       font-size: 15px;
       padding: 5px;
+      width: 100%;
     }
 
     .rrl {
@@ -179,14 +182,11 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Sections (unchanged content) -->
-  <!-- ... All your previous sections remain unchanged ... -->
-  <!-- NIPA example for fade transition -->
+  <!-- HOME -->
   <section id="home" class="section active-section">
     <div class="title">Welcome!</div>
     <div class="card">
-      <img
-        src="https://scontent.fcgy1-3.fna.fbcdn.net/v/t1.15752-9/590412443_1332664491510700_1306137013420101686_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEjR86pUk7-z4oq05uoxd4bpyY1rRGaNEWnJjWtEZo0RdZ4sSLTMQw_H5sb2R50mpo0mcQW0sGdRmXV88duMLPM&_nc_ohc=0-a0xsUevuwQ7kNvwGAAzZ1&_nc_oc=AdmmqE-05z54I7FsxYGurR0eCDKGPEtu3YLv9vXTjYON5J9MMoiYLXeCgAP1Vf54mCzsvOZToWqIkbH_BFgiNhPL&_nc_zt=23&_nc_ht=scontent.fcgy1-3.fna&oh=03_Q7cD4AGxWBVD_QUBIRoHqJY9ZQVzeGbGX4dIWT2DWWKl5Pdhvw&oe=6964DCC4">
+      <img src="https://scontent.fcgy1-3.fna.fbcdn.net/v/t1.15752-9/590412443_1332664491510700_1306137013420101686_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEjR86pUk7-z4oq05uoxd4bpyY1rRGaNEWnJjWtEZo0RdZ4sSLTMQw_H5sb2R50mpo0mcQW0sGdRmXV88duMLPM&_nc_ohc=0-a0xsUevuwQ7kNvwGAAzZ1&_nc_oc=AdmmqE-05z54I7FsxYGurR0eCDKGPEtu3YLv9vXTjYON5J9MMoiYLXeCgAP1Vf54mCzsvOZToWqIkbH_BFgiNhPL&_nc_zt=23&_nc_ht=scontent.fcgy1-3.fna&oh=03_Q7cD4AGxWBVD_QUBIRoHqJY9ZQVzeGbGX4dIWT2DWWKl5Pdhvw&oe=6964DCC4">
       Welcome to the official website of the <b>Nipa Vinegar Mosquito Patch</b> — a natural, eco-friendly, and Filipino-made innovation designed to protect families from mosquitoes.
       <br><br>
       This is a <b>Capstone Project/Product</b> created by
@@ -194,10 +194,106 @@
     </div>
   </section>
 
-  <!-- ... Other sections remain exactly the same ... -->
+  <!-- NIPA -->
+  <section id="nipa" class="section">
+    <div class="title">About the Nipa Tree</div>
+    <div class="card">
+      <img src="https://bushguide101.com/wp-content/uploads/2022/07/Don-Hoi-Lod-bei-Samut-Songhkran-72-scaled.jpg.webp">
+      <p>The Nipa palm (<i>Nypa fruticans</i>) is a unique mangrove species that grows in coastal wetlands, riverbanks, and brackish waters. It is highly valued in the Philippines for its ecological, cultural, and economic importance.</p>
+
+      <div class="side-by-side">
+        <div class="bullet">
+          <b>Ecological Benefits:</b><br>
+          Nipa palms stabilize riverbanks and prevent soil erosion. Their dense root system improves water quality and provides a habitat for fish, crabs, and other aquatic species.
+        </div>
+        <div class="bullet">
+          <b>Cultural Value:</b><br>
+          Filipinos have traditionally used nipa leaves for roofing, handicrafts, and weaving. Its sap is fermented into vinegar or sugar, forming an important part of local industries.
+        </div>
+      </div>
+
+      <div class="rrl"><b>References / RRL:</b> Studies show nipa palms contribute to biodiversity and support local communities by providing sustainable resources (Aquino et al., 2021; Santos, 2019).</div>
+    </div>
+  </section>
+
+  <!-- VINEGAR -->
+  <section id="vinegar" class="section">
+    <div class="title">How Nipa Vinegar Repels Mosquitoes</div>
+    <div class="card">
+      <img src="https://cdn.manilastandard.net/wp-content/uploads/2024/08/312051066_429293469378392_3108412464799003104_n.jpg">
+      <p>Nipa vinegar contains acetic acid and natural compounds that produce a scent mosquitoes dislike. These compounds interfere with their sense of smell, making them avoid areas where the vinegar is present.</p>
+
+      <h3>Why use a patch?</h3>
+      <p>By infusing vinegar into a natural gelling agent, it can be worn on the skin safely. This chemical-free method protects you and your family without the side effects of traditional repellents.</p>
+
+      <div class="bullet-grid">
+        <div class="bullet">Safe for kids and adults</div>
+        <div class="bullet">Eco-friendly and biodegradable</div>
+        <div class="bullet">Convenient for activities</div>
+        <div class="bullet">Supports local nipa growers</div>
+      </div>
+
+      <div class="rrl"><b>References / RRL:</b> Research confirms that natural acids in vinegar can repel insects, making it a safe and effective alternative to chemical repellents (Villanueva, 2020; Reyes et al., 2018).</div>
+    </div>
+  </section>
+
+  <!-- LOCATIONS -->
+  <section id="locations" class="section">
+    <div class="title">Where Nipa Trees Can Be Found</div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Nipa_palms.jpg">
+      <ul style="line-height:1.6;">
+        <li><b>Hagonoy, Bulacan:</b> Rich mangrove ecosystems supporting nipa growth.</li>
+        <li><b>Paombong, Bulacan:</b> Famous for producing high-quality vinegar from nipa sap.</li>
+        <li><b>Pampanga Delta:</b> Extensive nipa mangrove areas that protect the coastline from erosion.</li>
+        <li><b>Bataan Coastal Villages:</b> Communities rely on nipa for local livelihood and vinegar production.</li>
+        <li><b>Cagayan Region:</b> Nipa grows along rivers and marshlands, helping maintain biodiversity.</li>
+        <li><b>Visayas & Mindanao Coasts:</b> Leyte, Samar, Davao, Zamboanga, where nipa palms stabilize riverbanks.</li>
+      </ul>
+      <b>Environmental Note:</b> Nipa mangroves are critical in fighting coastal flooding, providing a natural buffer against strong tides and typhoons.
+      <br><br>
+      <i>Tip for enthusiasts:</i> Visiting these areas responsibly helps local communities and protects these unique ecosystems.
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="section">
+    <div class="title">User Reviews</div>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section id="feedback" class="section">
+    <div class="title">Send Your Feedback</div>
+    <div class="card">
+      <input id="fbName" placeholder="Your Name"><br><br>
+      <textarea id="fbText" rows="4" placeholder="Your Feedback"></textarea><br><br>
+
+      <label>Rate the Product:</label><br>
+      <div id="stars">
+        <span onclick="setRating(1)">★</span>
+        <span onclick="setRating(2)">★</span>
+        <span onclick="setRating(3)">★</span>
+        <span onclick="setRating(4)">★</span>
+        <span onclick="setRating(5)">★</span>
+      </div>
+      <input type="hidden" id="rating" value="0"><br>
+
+      <button onclick="submitFeedback()">Submit Feedback</button>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="title">Contact Us</div>
+    <div class="card">
+      Facebook: genezoe felipe martin<br>
+      Contact: 09466922248<br>
+      Email: nipa.vinegar.project@gmail.com
+    </div>
+  </section>
 
   <script>
-    // Firebase config (unchanged)
+    // 🔹 FIREBASE CONFIG
     const firebaseConfig = {
       apiKey: "AIzaSyAYXtsa6-39JuvzgAueoeoNyAi2UBSvyt0",
       authDomain: "nipavinegarpatch.firebaseapp.com",
@@ -211,7 +307,7 @@
     const app = firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore(app);
 
-    // Smooth fade section handling
+    // Smooth fade section navigation
     const sections = document.querySelectorAll(".section");
     const navLinks = document.querySelectorAll("nav a");
 
@@ -221,17 +317,23 @@
         const targetId = link.getAttribute("href").substring(1);
         const targetSection = document.getElementById(targetId);
 
-        sections.forEach(sec => sec.classList.remove("active-section"));
+        // Hide other sections
+        sections.forEach(sec => {
+          if (sec !== targetSection) sec.classList.remove("active-section");
+        });
+
+        // Show target section
         targetSection.classList.add("active-section");
 
+        // Update active nav
         navLinks.forEach(a => a.classList.remove("active"));
         link.classList.add("active");
 
+        // Scroll to top of section
         targetSection.scrollIntoView({ behavior: "smooth" });
       });
     });
 
-    // Ratings and feedback (unchanged)
     function setRating(value) {
       document.getElementById("rating").value = value;
       document.querySelectorAll("#stars span").forEach((s, i) => {
@@ -265,7 +367,11 @@
     function addReviewToPage(review) {
       const div = document.createElement("div");
       div.className = "card";
-      div.innerHTML = `<b>${review.name}</b><br>Rating: ${"★".repeat(review.rating)}<br>${review.text}`;
+      div.innerHTML = `
+        <b>${review.name}</b><br>
+        Rating: ${"★".repeat(review.rating)}<br>
+        ${review.text}
+      `;
       document.getElementById("reviews").appendChild(div);
     }
 
