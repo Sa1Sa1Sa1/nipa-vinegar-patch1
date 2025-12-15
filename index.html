@@ -122,41 +122,29 @@
       color: #ffb300;
     }
 
-    /* Bubble 2x2 grid for Vinegar bullets */
-    .bubble-grid {
+    /* Bubble bullets 2x2 grid */
+    .bullet-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin-top: 15px;
+      gap: 8px;
+      margin-top: 10px;
     }
 
-    .bubble-grid .bubble {
+    .bullet {
       background: #f4fff4;
-      padding: 15px;
-      border-radius: 20px;
-      border: 2px solid #2e7d32;
+      border-left: 5px solid #2e7d32;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 14px;
       text-align: center;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    @media (max-width: 600px) {
-      .bubble-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Side-by-side layout for About Nipa cards */
-    .side-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .side-cards .card {
-      flex: 1;
-      min-width: 250px;
+    /* Side by side bullets for About Nipa section */
+    .side-by-side {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -180,8 +168,7 @@
     <div class="title">Welcome!</div>
     <div class="card">
       <img src="https://scontent.fcgy1-3.fna.fbcdn.net/v/t1.15752-9/590412443_1332664491510700_1306137013420101686_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEjR86pUk7-z4oq05uoxd4bpyY1rRGaNEWnJjWtEZo0RdZ4sSLTMQw_H5sb2R50mpo0mcQW0sGdRmXV88duMLPM&_nc_ohc=0-a0xsUevuwQ7kNvwGAAzZ1&_nc_oc=AdmmqE-05z54I7FsxYGurR0eCDKGPEtu3YLv9vXTjYON5J9MMoiYLXeCgAP1Vf54mCzsvOZToWqIkbH_BFgiNhPL&_nc_zt=23&_nc_ht=scontent.fcgy1-3.fna&oh=03_Q7cD4AGxWBVD_QUBIRoHqJY9ZQVzeGbGX4dIWT2DWWKl5Pdhvw&oe=6964DCC4">
-      Welcome to the official website of the <b>Nipa Vinegar Mosquito Patch</b> — a natural,
-      eco-friendly, and Filipino-made innovation designed to protect families from mosquitoes.
+      Welcome to the official website of the <b>Nipa Vinegar Mosquito Patch</b> — a natural, eco-friendly, and Filipino-made innovation designed to protect families from mosquitoes.
       <br><br>
       This is a <b>Capstone Project/Product</b> created by
       <b>Grade 12 STEM students of Our Lady of La Salette, St. Mary's Academy of Hagonoy</b>.
@@ -193,21 +180,20 @@
     <div class="title">About the Nipa Tree</div>
     <div class="card">
       <img src="https://bushguide101.com/wp-content/uploads/2022/07/Don-Hoi-Lod-bei-Samut-Songhkran-72-scaled.jpg.webp">
-      The Nipa palm (<i>Nypa fruticans</i>) is a unique mangrove species that grows in coastal wetlands, riverbanks, and brackish waters. It is highly valued in the Philippines for its ecological, cultural, and economic importance.
-      <div class="rrl">
-        References / RRL: Studies show nipa palms contribute to biodiversity and support local communities by providing sustainable resources (Aquino et al., 2021; Santos, 2019).
+      <p>The Nipa palm (<i>Nypa fruticans</i>) is a unique mangrove species that grows in coastal wetlands, riverbanks, and brackish waters. It is highly valued in the Philippines for its ecological, cultural, and economic importance.</p>
+      
+      <div class="side-by-side">
+        <div class="bullet">
+          <b>Ecological Benefits:</b><br>
+          Nipa palms stabilize riverbanks and prevent soil erosion. Their dense root system improves water quality and provides a habitat for fish, crabs, and other aquatic species.
+        </div>
+        <div class="bullet">
+          <b>Cultural Value:</b><br>
+          Filipinos have traditionally used nipa leaves for roofing, handicrafts, and weaving. Its sap is fermented into vinegar or sugar, forming an important part of local industries.
+        </div>
       </div>
-    </div>
 
-    <div class="side-cards">
-      <div class="card">
-        <div class="title" style="font-size: 20px;">Ecological Benefits</div>
-        <p>Nipa palms stabilize riverbanks and prevent soil erosion. Their dense root system improves water quality and provides a habitat for fish, crabs, and other aquatic species.</p>
-      </div>
-      <div class="card">
-        <div class="title" style="font-size: 20px;">Cultural Value</div>
-        <p>Filipinos have traditionally used nipa leaves for roofing, handicrafts, and weaving. Its sap is fermented into vinegar or sugar, forming an important part of local industries.</p>
-      </div>
+      <div class="rrl"><b>References / RRL:</b> Studies show nipa palms contribute to biodiversity and support local communities by providing sustainable resources (Aquino et al., 2021; Santos, 2019).</div>
     </div>
   </section>
 
@@ -216,21 +202,20 @@
     <div class="title">How Nipa Vinegar Repels Mosquitoes</div>
     <div class="card">
       <img src="https://cdn.manilastandard.net/wp-content/uploads/2024/08/312051066_429293469378392_3108412464799003104_n.jpg">
+      
       <p>Nipa vinegar contains acetic acid and natural compounds that produce a scent mosquitoes dislike. These compounds interfere with their sense of smell, making them avoid areas where the vinegar is present.</p>
 
-      <b>Why use a patch?</b>
+      <h3>Why use a patch?</h3>
       <p>By infusing vinegar into a natural gelling agent, it can be worn on the skin safely. This chemical-free method protects you and your family without the side effects of traditional repellents.</p>
 
-      <div class="bubble-grid">
-        <div class="bubble">Safe for kids and adults</div>
-        <div class="bubble">Eco-friendly and biodegradable</div>
-        <div class="bubble">Convenient for activities</div>
-        <div class="bubble">Supports local nipa growers</div>
+      <div class="bullet-grid">
+        <div class="bullet">Safe for kids and adults</div>
+        <div class="bullet">Eco-friendly and biodegradable</div>
+        <div class="bullet">Convenient for activities</div>
+        <div class="bullet">Supports local nipa growers</div>
       </div>
 
-      <div class="rrl">
-        References / RRL: Research confirms that natural acids in vinegar can repel insects, making it a safe and effective alternative to chemical repellents (Villanueva, 2020; Reyes et al., 2018).
-      </div>
+      <div class="rrl"><b>References / RRL:</b> Research confirms that natural acids in vinegar can repel insects, making it a safe and effective alternative to chemical repellents (Villanueva, 2020; Reyes et al., 2018).</div>
     </div>
   </section>
 
@@ -239,7 +224,6 @@
     <div class="title">Where Nipa Trees Can Be Found</div>
     <div class="card">
       <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Nipa_palms.jpg">
-      Nipa palms grow in wetlands with slow-moving, brackish water. Here are some locations in the Philippines where nipa trees thrive naturally:
       <ul style="line-height:1.6;">
         <li><b>Hagonoy, Bulacan:</b> Rich mangrove ecosystems supporting nipa growth.</li>
         <li><b>Paombong, Bulacan:</b> Famous for producing high-quality vinegar from nipa sap.</li>
@@ -251,7 +235,6 @@
       <b>Environmental Note:</b> Nipa mangroves are critical in fighting coastal flooding, providing a natural buffer against strong tides and typhoons.
       <br><br>
       <i>Tip for enthusiasts:</i> Visiting these areas responsibly helps local communities and protects these unique ecosystems.
-      <br><br>
     </div>
   </section>
 
@@ -266,6 +249,7 @@
     <div class="card">
       <input id="fbName" placeholder="Your Name"><br><br>
       <textarea id="fbText" rows="4" placeholder="Your Feedback"></textarea><br><br>
+
       <label>Rate the Product:</label><br>
       <div id="stars">
         <span onclick="setRating(1)">★</span>
@@ -275,6 +259,7 @@
         <span onclick="setRating(5)">★</span>
       </div>
       <input type="hidden" id="rating" value="0"><br>
+
       <button onclick="submitFeedback()">Submit Feedback</button>
     </div>
   </section>
@@ -290,7 +275,7 @@
   </section>
 
   <script>
-    // FIREBASE CONFIG
+    // 🔹 FIREBASE CONFIG
     const firebaseConfig = {
       apiKey: "AIzaSyAYXtsa6-39JuvzgAueoeoNyAi2UBSvyt0",
       authDomain: "nipavinegarpatch.firebaseapp.com",
@@ -301,11 +286,9 @@
       measurementId: "G-18LTZMP11L"
     };
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore(app);
 
-    // Navigation
     function showSection(id, event) {
       document.querySelectorAll('.section').forEach(s => s.classList.remove('active-section'));
       document.getElementById(id).classList.add('active-section');
@@ -313,7 +296,6 @@
       event.target.classList.add('active');
     }
 
-    // Star Rating
     function setRating(value) {
       document.getElementById("rating").value = value;
       document.querySelectorAll("#stars span").forEach((s, i) => {
@@ -321,13 +303,12 @@
       });
     }
 
-    // Submit Feedback to Firestore
     function submitFeedback() {
       const name = fbName.value || "Anonymous";
       const text = fbText.value;
-      const rating = document.getElementById("rating").value;
+      const rating = Number(document.getElementById("rating").value);
 
-      if (!text.trim() || rating == 0) {
+      if (!text.trim() || rating === 0) {
         alert("Please add feedback and rating.");
         return;
       }
@@ -335,7 +316,7 @@
       db.collection("reviews").add({
         name: name,
         text: text,
-        rating: Number(rating),
+        rating: rating,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
       }).then(() => {
         fbName.value = "";
@@ -345,11 +326,14 @@
       });
     }
 
-    // Display Reviews
     function addReviewToPage(review) {
       const div = document.createElement("div");
       div.className = "card";
-      div.innerHTML = `<b>${review.name}</b><br>Rating: ${"★".repeat(review.rating)}<br>${review.text}`;
+      div.innerHTML = `
+        <b>${review.name}</b><br>
+        Rating: ${"★".repeat(review.rating)}<br>
+        ${review.text}
+      `;
       document.getElementById("reviews").appendChild(div);
     }
 
