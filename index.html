@@ -64,21 +64,18 @@
     /* Sections */
     .section {
       opacity: 0;
-      visibility: hidden;
+      max-height: 0;
+      overflow: hidden;
       transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-      padding: 25px;
-      position: absolute;
-      width: 100%;
-      top: 130px;
-      left: 0;
+      transition: opacity 0.6s ease, transform 0.6s ease, max-height 0.6s ease;
+      padding: 0 25px;
     }
 
     .active-section {
       opacity: 1;
-      visibility: visible;
+      max-height: 5000px;
       transform: translateY(0);
-      position: relative;
+      padding: 25px;
     }
 
     .card {
@@ -317,19 +314,15 @@
         const targetId = link.getAttribute("href").substring(1);
         const targetSection = document.getElementById(targetId);
 
-        // Hide other sections
         sections.forEach(sec => {
-          if (sec !== targetSection) sec.classList.remove("active-section");
+          sec.classList.remove("active-section");
         });
 
-        // Show target section
         targetSection.classList.add("active-section");
 
-        // Update active nav
         navLinks.forEach(a => a.classList.remove("active"));
         link.classList.add("active");
 
-        // Scroll to top of section
         targetSection.scrollIntoView({ behavior: "smooth" });
       });
     });
