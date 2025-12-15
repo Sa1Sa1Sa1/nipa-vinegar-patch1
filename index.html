@@ -61,21 +61,15 @@
       color: #1b3c1b;
     }
 
-    /* Sections */
     .section {
       opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease, max-height 0.6s ease;
-      padding: 0 25px;
+      transition: opacity 0.5s ease;
+      display: none;
     }
 
     .active-section {
       opacity: 1;
-      max-height: 5000px;
-      transform: translateY(0);
-      padding: 25px;
+      display: block;
     }
 
     .card {
@@ -290,7 +284,6 @@
   </section>
 
   <script>
-    // 🔹 FIREBASE CONFIG
     const firebaseConfig = {
       apiKey: "AIzaSyAYXtsa6-39JuvzgAueoeoNyAi2UBSvyt0",
       authDomain: "nipavinegarpatch.firebaseapp.com",
@@ -304,20 +297,16 @@
     const app = firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore(app);
 
-    // Smooth fade section navigation
     const sections = document.querySelectorAll(".section");
     const navLinks = document.querySelectorAll("nav a");
 
     navLinks.forEach(link => {
-      link.addEventListener("click", (e) => {
+      link.addEventListener("click", e => {
         e.preventDefault();
         const targetId = link.getAttribute("href").substring(1);
         const targetSection = document.getElementById(targetId);
 
-        sections.forEach(sec => {
-          sec.classList.remove("active-section");
-        });
-
+        sections.forEach(sec => sec.classList.remove("active-section"));
         targetSection.classList.add("active-section");
 
         navLinks.forEach(a => a.classList.remove("active"));
@@ -338,12 +327,10 @@
       const name = fbName.value || "Anonymous";
       const text = fbText.value;
       const rating = Number(document.getElementById("rating").value);
-
       if (!text.trim() || rating === 0) {
         alert("Please add feedback and rating.");
         return;
       }
-
       db.collection("reviews").add({
         name: name,
         text: text,
@@ -360,20 +347,14 @@
     function addReviewToPage(review) {
       const div = document.createElement("div");
       div.className = "card";
-      div.innerHTML = `
-        <b>${review.name}</b><br>
-        Rating: ${"★".repeat(review.rating)}<br>
-        ${review.text}
-      `;
+      div.innerHTML = `<b>${review.name}</b><br>Rating: ${"★".repeat(review.rating)}<br>${review.text}`;
       document.getElementById("reviews").appendChild(div);
     }
 
-    db.collection("reviews")
-      .orderBy("timestamp", "desc")
-      .onSnapshot(snapshot => {
-        document.getElementById("reviews").innerHTML = "<div class='title'>User Reviews</div>";
-        snapshot.forEach(doc => addReviewToPage(doc.data()));
-      });
+    db.collection("reviews").orderBy("timestamp", "desc").onSnapshot(snapshot => {
+      document.getElementById("reviews").innerHTML = "<div class='title'>User Reviews</div>";
+      snapshot.forEach(doc => addReviewToPage(doc.data()));
+    });
   </script>
 
 </body>
