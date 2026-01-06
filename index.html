@@ -59,29 +59,14 @@ nav a:hover {
   color: #1b3c1b;
 }
 
-/* WRAPPER TO HOLD SECTIONS */
-#sections-wrapper {
-  position: relative;
-  min-height: 100vh; /* Make sure wrapper has enough height for content */
-}
-
-/* INSTANT SECTION SWITCHING */
+/* NO TRANSITION SECTIONS */
 .section {
-  position: absolute;   /* Stack sections on top of each other */
-  top: 0;
-  left: 0;
-  width: 100%;
+  display: none;
   padding: 25px;
-  opacity: 1 !important;
-  visibility: hidden;   /* Hide by default */
-  pointer-events: none; /* Disable interaction for hidden sections */
-  transition: none !important;
-  box-sizing: border-box;
 }
 
 .active-section {
-  visibility: visible;  /* Show active section instantly */
-  pointer-events: auto; /* Enable interaction */
+  display: block;
 }
 
 .card {
@@ -192,71 +177,66 @@ textarea {
   <a onclick="showSection('contact', event)">Contact</a>
 </nav>
 
-<!-- WRAPPER TO HOLD SECTIONS -->
-<div id="sections-wrapper">
+<!-- HOME -->
+<section id="home" class="section active-section">
+  <div class="title">Welcome!</div>
+  <div class="card">
+    <img src="https://scontent.fcgy1-3.fna.fbcdn.net/v/t1.15752-9/590412443_1332664491510700_1306137013420101686_n.jpg">
+    Welcome to the official website of the <b>Nipa Vinegar Mosquito Patch</b> — a natural, eco-friendly, and Filipino-made innovation designed to protect families from mosquitoes.
+    <br><br>
+    This is a <b>Capstone Project/Product</b> created by
+    <b>Grade 12 STEM students of Our Lady of La Salette, St. Mary's Academy of Hagonoy</b>.
+  </div>
+</section>
 
-  <!-- HOME -->
-  <section id="home" class="section active-section">
-    <div class="title">Welcome!</div>
-    <div class="card">
-      <img src="https://scontent.fcgy1-3.fna.fbcdn.net/v/t1.15752-9/590412443_1332664491510700_1306137013420101686_n.jpg">
-      Welcome to the official website of the <b>Nipa Vinegar Mosquito Patch</b> — a natural, eco-friendly, and Filipino-made innovation designed to protect families from mosquitoes.
-      <br><br>
-      This is a <b>Capstone Project/Product</b> created by
-      <b>Grade 12 STEM students of Our Lady of La Salette, St. Mary's Academy of Hagonoy</b>.
+<!-- NIPA -->
+<section id="nipa" class="section">
+  <div class="title">About the Nipa Tree</div>
+  <div class="card">
+    <img src="https://bushguide101.com/wp-content/uploads/2022/07/Don-Hoi-Lod-bei-Samut-Songhkran-72-scaled.jpg.webp">
+    <p>The Nipa palm (<i>Nypa fruticans</i>) is a unique mangrove species that grows in coastal wetlands, riverbanks, and brackish waters. It is highly valued in the Philippines for its ecological, cultural, and economic importance.</p>
+
+    <div class="side-by-side">
+      <div class="bullet"><b>Ecological Benefits:</b><br>Stabilizes riverbanks, prevents erosion, improves water quality, and supports aquatic life.</div>
+      <div class="bullet"><b>Cultural Value:</b><br>Used for roofing, weaving, and vinegar production supporting local industries.</div>
     </div>
-  </section>
 
-  <!-- NIPA -->
-  <section id="nipa" class="section">
-    <div class="title">About the Nipa Tree</div>
-    <div class="card">
-      <img src="https://bushguide101.com/wp-content/uploads/2022/07/Don-Hoi-Lod-bei-Samut-Songhkran-72-scaled.jpg.webp">
-      <p>The Nipa palm (<i>Nypa fruticans</i>) is a unique mangrove species that grows in coastal wetlands, riverbanks, and brackish waters. It is highly valued in the Philippines for its ecological, cultural, and economic importance.</p>
+    <div class="rrl"><b>References / RRL:</b> Aquino et al., 2021; Santos, 2019</div>
+  </div>
+</section>
 
-      <div class="side-by-side">
-        <div class="bullet"><b>Ecological Benefits:</b><br>Stabilizes riverbanks, prevents erosion, improves water quality, and supports aquatic life.</div>
-        <div class="bullet"><b>Cultural Value:</b><br>Used for roofing, weaving, and vinegar production supporting local industries.</div>
-      </div>
+<!-- VINEGAR -->
+<section id="vinegar" class="section">
+  <div class="title">How Nipa Vinegar Repels Mosquitoes</div>
+  <div class="card">
+    <img src="https://cdn.manilastandard.net/wp-content/uploads/2024/08/312051066_429293469378392_3108412464799003104_n.jpg">
 
-      <div class="rrl"><b>References / RRL:</b> Aquino et al., 2021; Santos, 2019</div>
+    <p>Nipa vinegar contains acetic acid and natural compounds that disrupt mosquito scent receptors.</p>
+
+    <h3>Why use a patch?</h3>
+    <p>Safe, wearable, chemical-free protection for the whole family.</p>
+
+    <div class="bullet-grid">
+      <div class="bullet">Safe for kids and adults</div>
+      <div class="bullet">Eco-friendly & biodegradable</div>
+      <div class="bullet">Convenient for activities</div>
+      <div class="bullet">Supports nipa growers</div>
     </div>
-  </section>
 
-  <!-- VINEGAR -->
-  <section id="vinegar" class="section">
-    <div class="title">How Nipa Vinegar Repels Mosquitoes</div>
-    <div class="card">
-      <img src="https://cdn.manilastandard.net/wp-content/uploads/2024/08/312051066_429293469378392_3108412464799003104_n.jpg">
+    <div class="rrl"><b>References / RRL:</b> Villanueva, 2020; Reyes et al., 2018</div>
+  </div>
+</section>
 
-      <p>Nipa vinegar contains acetic acid and natural compounds that disrupt mosquito scent receptors.</p>
-
-      <h3>Why use a patch?</h3>
-      <p>Safe, wearable, chemical-free protection for the whole family.</p>
-
-      <div class="bullet-grid">
-        <div class="bullet">Safe for kids and adults</div>
-        <div class="bullet">Eco-friendly & biodegradable</div>
-        <div class="bullet">Convenient for activities</div>
-        <div class="bullet">Supports nipa growers</div>
-      </div>
-
-      <div class="rrl"><b>References / RRL:</b> Villanueva, 2020; Reyes et al., 2018</div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="big-thank">THANK YOU!</div>
-    <div class="card">
-      <p>🌿 Thank you for supporting our eco-friendly innovation.</p>
-      <p><b>Facebook:</b> genezoe felipe martin</p>
-      <p><b>Contact:</b> 09466922248</p>
-      <p><b>Email:</b> nipa.vinegar.project@gmail.com</p>
-    </div>
-  </section>
-
-</div>
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="big-thank">THANK YOU!</div>
+  <div class="card">
+    <p>🌿 Thank you for supporting our eco-friendly innovation.</p>
+    <p><b>Facebook:</b> genezoe felipe martin</p>
+    <p><b>Contact:</b> 09466922248</p>
+    <p><b>Email:</b> nipa.vinegar.project@gmail.com</p>
+  </div>
+</section>
 
 <script>
 const firebaseConfig = {
@@ -278,6 +258,7 @@ function showSection(id, event) {
   event.target.classList.add('active');
 }
 </script>
+
 
 </body>
 </html>
