@@ -59,16 +59,22 @@ nav a:hover {
   color: #1b3c1b;
 }
 
-/* NO TRANSITION SECTIONS */
+/* INSTANT SECTION SWITCHING */
 .section {
-  display: none;
+  position: absolute;   /* Stack sections on top of each other */
+  top: 140px;           /* Below header + nav */
+  left: 0;
+  width: 100%;
   padding: 25px;
-  opacity: 1;           /* Ensure full visibility */
-  transition: none !important; /* Remove any fade or animation */
+  opacity: 1 !important;
+  visibility: hidden;   /* Hide by default */
+  pointer-events: none; /* Disable interaction for hidden sections */
+  transition: none !important;
 }
 
 .active-section {
-  display: block;
+  visibility: visible;  /* Show active section instantly */
+  pointer-events: auto; /* Enable interaction */
 }
 
 .card {
