@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,76 +13,96 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background: #eef7ef;
+  color: #1b3c1b;
 }
 
 header {
-  background: #2e7d32;
-  color: white;
-  padding: 15px;
+  background: linear-gradient(to right, #2e7d32, #66bb6a);
+  padding: 20px;
   text-align: center;
-  font-size: 22px;
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 nav {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  background: #388e3c;
-  padding: 10px;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px;
+  background: #1b5e20;
 }
 
 nav a {
   color: white;
+  background: #2e7d32;
+  padding: 10px 18px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-nav a.active {
-  text-decoration: underline;
+nav a.active, nav a:hover {
+  background: #a5d6a7;
+  color: #1b3c1b;
 }
 
 .section {
-  position: absolute;
-  top: 120px;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  opacity: 0;
-  pointer-events: none;
+  display: none;
+  padding: 25px;
 }
 
-.active-section {
-  opacity: 1;
-  pointer-events: auto;
+.section.active-section {
+  display: block;
 }
 
 .card {
   background: white;
-  padding: 15px;
-  margin: 10px 0;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1b5e20;
+  margin-bottom: 10px;
+}
+
+input, textarea {
   border-radius: 8px;
-}
-
-#stars span {
-  font-size: 25px;
-  cursor: pointer;
-  color: gray;
-}
-
-#stars span.active {
-  color: gold;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  padding: 5px;
+  width: 100%;
 }
 
 button {
-  padding: 10px;
-  background: #2e7d32;
-  color: white;
+  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  background: #1b5e20;
+  color: white;
   cursor: pointer;
+}
+
+#stars span {
+  font-size: 28px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+#stars span.active {
+  color: #ffb300;
 }
 </style>
 </head>
@@ -91,159 +112,171 @@ button {
 <header>🌿 Nipa Vinegar Mosquito Patch</header>
 
 <nav>
-  <a href="#home" class="active">Home</a>
-  <a href="#nipa">About Nipa</a>
-  <a href="#vinegar">Vinegar</a>
-  <a href="#locations">Locations</a>
-  <a href="#reviews">Reviews</a>
-  <a href="#feedback">Feedback</a>
-  <a href="#contact">Contact</a>
+<a href="#home" class="active">Home</a>
+<a href="#nipa">About Nipa Tree</a>
+<a href="#vinegar">Vinegar & Mosquito</a>
+<a href="#locations">Locations</a>
+<a href="#reviews">Reviews</a>
+<a href="#feedback">Feedback</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <!-- HOME -->
-<div id="home" class="section active-section">
-  <h2>Home</h2>
-  <p>This project focuses on creating a natural mosquito repellent gel patch using nipa vinegar.</p>
+<section id="home" class="section active-section">
+<div class="title">Welcome!</div>
+<div class="card">
+<img src="https://scontent.fcgy1-3.fna.fbcdn.net/v/t1.15752-9/590412443_1332664491510700_1306137013420101686_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEjR86pUk7-z4oq05uoxd4bpyY1rRGaNEWnJjWtEZo0RdZ4sSLTMQw_H5sb2R50mpo0mcQW0sGdRmXV88duMLPM&_nc_ohc=0-a0xsUevuwQ7kNvwGAAzZ1&_nc_oc=AdmmqE-05z54I7FsxYGurR0eCDKGPEtu3YLv9vXTjYON5J9MMoiYLXeCgAP1Vf54mCzsvOZToWqIkbH_BFgiNhPL&_nc_zt=23&_nc_ht=scontent.fcgy1-3.fna&oh=03_Q7cD4AGxWBVD_QUBIRoHqJY9ZQVzeGbGX4dIWT2DWWKl5Pdhvw&oe=6964DCC4">
+Welcome to the official website of the <b>Nipa Vinegar Mosquito Patch</b> — a natural, eco-friendly, and Filipino-made innovation designed to protect families from mosquitoes.
+<br><br>
+This is a <b>Capstone Project/Product</b> created by
+<b>Grade 12 STEM students of Our Lady of La Salette, St. Mary's Academy of Hagonoy</b>.
 </div>
+</section>
 
 <!-- NIPA -->
-<div id="nipa" class="section">
-  <h2>About Nipa Tree</h2>
-  <p>The nipa palm is abundant in coastal areas and is known for its natural vinegar.</p>
+<section id="nipa" class="section">
+<div class="title">About the Nipa Tree</div>
+<div class="card">
+<img src="https://bushguide101.com/wp-content/uploads/2022/07/Don-Hoi-Lod-bei-Samut-Songhkran-72-scaled.jpg.webp">
+<p>The Nipa palm (<i>Nypa fruticans</i>) is a unique mangrove species that grows in coastal wetlands, riverbanks, and brackish waters. It is highly valued in the Philippines for its ecological, cultural, and economic importance.</p>
+
+<div class="card"><b>Ecological Benefits:</b> Nipa palms stabilize riverbanks, improve water quality, and support aquatic life.</div>
+<div class="card"><b>Cultural Value:</b> Filipinos use nipa leaves for roofing, handicrafts, and fermentation into vinegar.</div>
 </div>
+</section>
 
 <!-- VINEGAR -->
-<div id="vinegar" class="section">
-  <h2>Vinegar and Mosquito Repellent</h2>
-  <p>Nipa vinegar has properties that help repel mosquitoes naturally.</p>
+<section id="vinegar" class="section">
+<div class="title">How Nipa Vinegar Repels Mosquitoes</div>
+<div class="card">
+<img src="https://cdn.manilastandard.net/wp-content/uploads/2024/08/312051066_429293469378392_3108412464799003104_n.jpg">
+<p>Nipa vinegar contains acetic acid and natural compounds that produce a scent mosquitoes dislike.</p>
 </div>
+</section>
 
 <!-- LOCATIONS -->
-<div id="locations" class="section">
-  <h2>Research Locations</h2>
-  <p>Data were gathered from selected barangays in the municipality.</p>
+<section id="locations" class="section">
+<div class="title">Where Nipa Trees Can Be Found</div>
+<div class="card">
+<ul>
+<li><b>Hagonoy, Bulacan:</b> Rich mangrove ecosystems.</li>
+<li><b>Paombong, Bulacan:</b> Famous for producing vinegar from nipa sap.</li>
+<li><b>Pampanga Delta:</b> Nipa mangrove areas protect coastlines.</li>
+<li><b>Bataan Coastal Villages:</b> Communities rely on nipa for local livelihood.</li>
+<li><b>Cagayan Region:</b> Along rivers and marshlands.</li>
+<li><b>Visayas & Mindanao Coasts:</b> Stabilize riverbanks.</li>
+</ul>
 </div>
+</section>
 
 <!-- REVIEWS -->
-<div id="reviews" class="section">
-  <h2>User Reviews</h2>
-</div>
+<section id="reviews" class="section">
+<div class="title">User Reviews</div>
+</section>
 
 <!-- FEEDBACK -->
-<div id="feedback" class="section">
-  <h2>Submit Feedback</h2>
-
-  <input id="fbName" placeholder="Your name (optional)"><br><br>
-
-  <div id="stars">
-    <span onclick="setRating(1)">★</span>
-    <span onclick="setRating(2)">★</span>
-    <span onclick="setRating(3)">★</span>
-    <span onclick="setRating(4)">★</span>
-    <span onclick="setRating(5)">★</span>
-  </div>
-
-  <input type="hidden" id="rating" value="0"><br>
-
-  <textarea id="fbText" placeholder="Your feedback" rows="4" cols="40"></textarea><br><br>
-
-  <button onclick="submitFeedback()">Submit</button>
+<section id="feedback" class="section">
+<div class="title">Send Your Feedback</div>
+<div class="card">
+<input id="fbName" placeholder="Your Name"><br><br>
+<div id="stars">
+<span onclick="setRating(1)">★</span>
+<span onclick="setRating(2)">★</span>
+<span onclick="setRating(3)">★</span>
+<span onclick="setRating(4)">★</span>
+<span onclick="setRating(5)">★</span>
 </div>
+<input type="hidden" id="rating" value="0"><br><br>
+<textarea id="fbText" rows="4" placeholder="Your Feedback"></textarea><br><br>
+<button onclick="submitFeedback()">Submit Feedback</button>
+</div>
+</section>
 
 <!-- CONTACT -->
-<div id="contact" class="section">
-  <h2>Contact</h2>
-  <p>Senior High School Students – St. Mary’s Academy of Hagonoy</p>
+<section id="contact" class="section">
+<div class="title">Contact</div>
+<div class="card">
+<p>🌿 We deeply appreciate your support! Email: nipa.vinegar.project@gmail.com</p>
 </div>
+</section>
 
 <script>
-/* FIREBASE CONFIG */
+// Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyAYXtsa6-39JuvzgAueoeoNyAi2UBSvyt0",
-  authDomain: "nipavinegarpatch.firebaseapp.com",
-  projectId: "nipavinegarpatch",
-  storageBucket: "nipavinegarpatch.appspot.com",
-  messagingSenderId: "831718429416",
-  appId: "1:831718429416:web:a62b799a85722c2bf2af5d"
+apiKey: "AIzaSyAYXtsa6-39JuvzgAueoeoNyAi2UBSvyt0",
+authDomain: "nipavinegarpatch.firebaseapp.com",
+projectId: "nipavinegarpatch",
+storageBucket: "nipavinegarpatch.appspot.com",
+messagingSenderId: "831718429416",
+appId: "1:831718429416:web:a62b799a85722c2bf2af5d"
 };
-
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-/* NAVIGATION (THIS FIXES THE DISAPPEARING INFO) */
+// Navigation
 const sections = document.querySelectorAll(".section");
 const navLinks = document.querySelectorAll("nav a");
-
 navLinks.forEach(link => {
   link.addEventListener("click", e => {
     e.preventDefault();
     const id = link.getAttribute("href").substring(1);
-
     sections.forEach(sec => sec.classList.remove("active-section"));
     document.getElementById(id).classList.add("active-section");
-
     navLinks.forEach(a => a.classList.remove("active"));
     link.classList.add("active");
   });
 });
 
-/* STAR RATING */
-function setRating(val) {
-  document.getElementById("rating").value = val;
-  document.querySelectorAll("#stars span").forEach((s,i)=>{
-    s.classList.toggle("active", i < val);
-  });
+// Star rating
+function setRating(val){
+document.getElementById("rating").value = val;
+document.querySelectorAll("#stars span").forEach((s,i)=>s.classList.toggle("active",i<val));
 }
 
-/* SUBMIT FEEDBACK */
-function submitFeedback() {
-  const name = fbName.value || "Anonymous";
-  const text = fbText.value.trim();
-  const rating = Number(ratingInput = document.getElementById("rating").value);
+// Submit feedback
+function submitFeedback(){
+const name = document.getElementById("fbName").value || "Anonymous";
+const text = document.getElementById("fbText").value.trim();
+const rating = Number(document.getElementById("rating").value);
+if(!text || rating===0){ alert("Please add feedback and rating."); return; }
 
-  if (!text || rating === 0) {
-    alert("Please enter feedback and rating.");
-    return;
-  }
-
-  db.collection("reviews").add({
-    name,
-    text,
-    rating,
-    timestamp: firebase.firestore.FieldValue.serverTimestamp()
-  });
-
-  fbName.value = "";
-  fbText.value = "";
-  document.getElementById("rating").value = 0;
-  document.querySelectorAll("#stars span").forEach(s => s.classList.remove("active"));
+db.collection("reviews").add({
+name, text, rating, timestamp: firebase.firestore.FieldValue.serverTimestamp()
+})
+.then(()=> {
+document.getElementById("fbName").value = "";
+document.getElementById("fbText").value = "";
+document.getElementById("rating").value = 0;
+document.querySelectorAll("#stars span").forEach(s=>s.classList.remove("active"));
+})
+.catch(err=>{ alert("Error saving feedback. Check Firebase rules."); console.error(err); });
 }
 
-/* LOAD REVIEWS (STAYS AFTER REFRESH) */
-db.collection("reviews")
-.orderBy("timestamp", "desc")
-.onSnapshot(snapshot => {
-  const reviewsDiv = document.getElementById("reviews");
-  reviewsDiv.innerHTML = "<h2>User Reviews</h2>";
-
-  snapshot.forEach(doc => {
-    const r = doc.data();
-    const div = document.createElement("div");
-    div.className = "card";
-    div.innerHTML = `<b>${r.name}</b><br>
-                     Rating: ${"★".repeat(r.rating)}<br>
-                     ${r.text}`;
-    reviewsDiv.appendChild(div);
-  });
+// Load reviews
+db.collection("reviews").orderBy("timestamp","desc")
+.onSnapshot(snapshot=>{
+const reviewsDiv = document.getElementById("reviews");
+reviewsDiv.innerHTML = "<div class='title'>User Reviews</div>";
+snapshot.forEach(doc=>{
+const r = doc.data();
+const div = document.createElement("div");
+div.className="card";
+div.innerHTML = `<b>${r.name}</b><br>Rating: ${"★".repeat(r.rating)}<br>${r.text}`;
+reviewsDiv.appendChild(div);
+});
 });
 </script>
 
+<!-- FIRESTORE RULES -->
 <!--
-FIRESTORE RULES (FOR TESTING / DOCUMENTATION)
-
+rules_version = '2';
+service cloud.firestore {
+match /databases/{database}/documents {
+match /{document=**} {
 allow read, write: if true;
-
-Applied in Firebase Console
+}
+}
+}
 -->
 
 </body>
