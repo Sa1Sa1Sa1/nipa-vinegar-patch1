@@ -255,9 +255,6 @@ Filipinos have traditionally used nipa leaves for roofing, handicrafts, and weav
 <li><b>Cagayan Region:</b> Nipa grows along rivers and marshlands, helping maintain biodiversity.</li>
 <li><b>Visayas & Mindanao Coasts:</b> Leyte, Samar, Davao, Zamboanga, where nipa palms stabilize riverbanks.</li>
 </ul>
-<b>Environmental Note:</b> Nipa mangroves are critical in fighting coastal flooding, providing a natural buffer against strong tides and typhoons.
-<br><br>
-<i>Tip for enthusiasts:</i> Visiting these areas responsibly helps local communities and protects these unique ecosystems.
 </div>
 </section>
 
@@ -301,27 +298,22 @@ Filipinos have traditionally used nipa leaves for roofing, handicrafts, and weav
 </section>
 
 <script>
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase Configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAYXtsa6-39JuvzgAueoeoNyAi2UBSvyt0",
-  authDomain: "nipavinegarpatch.firebaseapp.com",
-  projectId: "nipavinegarpatch",
-  storageBucket: "nipavinegarpatch.firebasestorage.app",
-  messagingSenderId: "831718429416",
-  appId: "1:831718429416:web:b8c3146b07f09216f2af5d",
-  measurementId: "G-W0X5VNGJW2"
+apiKey: "AIzaSyAYXtsa6-39JuvzgAueoeoNyAi2UBSvyt0",
+authDomain: "nipavinegarpatch.firebaseapp.com",
+projectId: "nipavinegarpatch",
+storageBucket: "nipavinegarpatch.firebasestorage.app",
+messagingSenderId: "831718429416",
+appId: "1:831718429416:web:a62b799a85722c2bf2af5d",
+measurementId: "G-18LTZMP11L"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore(app);
+
+// Navigation
 const sections = document.querySelectorAll(".section");
 const navLinks = document.querySelectorAll("nav a");
 
@@ -341,6 +333,7 @@ targetSection.scrollIntoView({ behavior: "smooth" });
 });
 });
 
+// Star Rating
 function setRating(value) {
 document.getElementById("rating").value = value;
 document.querySelectorAll("#stars span").forEach((s, i) => {
@@ -348,14 +341,17 @@ s.classList.toggle("active", i < value);
 });
 }
 
+// Submit Feedback
 function submitFeedback() {
 const name = fbName.value || "Anonymous";
 const text = fbText.value;
 const rating = Number(document.getElementById("rating").value);
+
 if (!text.trim() || rating === 0) {
 alert("Please add feedback and rating.");
 return;
 }
+
 db.collection("reviews").add({
 name: name,
 text: text,
@@ -366,9 +362,13 @@ fbName.value = "";
 fbText.value = "";
 document.getElementById("rating").value = 0;
 document.querySelectorAll("#stars span").forEach(s => s.classList.remove("active"));
+}).catch(err => {
+console.error("Error saving feedback:", err);
+alert("Error saving feedback. Check Firebase rules.");
 });
 }
 
+// Display Reviews
 function addReviewToPage(review) {
 const div = document.createElement("div");
 div.className = "card";
@@ -381,7 +381,6 @@ document.getElementById("reviews").innerHTML = "<div class='title'>User Reviews<
 snapshot.forEach(doc => addReviewToPage(doc.data()));
 });
 </script>
-
 
 </body>
 </html>
